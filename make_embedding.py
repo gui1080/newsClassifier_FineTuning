@@ -1,5 +1,5 @@
 from sklearn.model_selection import train_test_split
-from transformers import AutoTokenizer, BertTokenizer, BertModel
+from transformers import AutoTokenizer, BertTokenizer, BertModel, BartTokenizer, BartModel, RobertaTokenizer, RobertaModel
 from transformers import AutoModelForSequenceClassification
 from transformers import DataCollatorWithPadding
 import evaluate
@@ -113,6 +113,8 @@ def normalize_text(input_text):
 
 # --------------------------------------------------------
 
+'''
+
 print("Loading csv")
 
 # Load the CSV file
@@ -153,6 +155,8 @@ print("\n\n")
 print(df["text"][0])
 
 '''
+
+'''
 print(df_bert)
 print(df_bert[0])
 print(len(df_bert[0]))
@@ -160,12 +164,14 @@ print(type(df_bert[0]))
 print(type(df_bert))
 '''
 
+'''
 # ---------------------------------------------------------------------------------------------------
 
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
 import pickle
+
 # ---------------------------------------------------------------------------------------------------
 # TESTE
 
@@ -193,6 +199,8 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 print("Classification Report:\n", classification_report(y_test, y_pred))
 
 '''
+
+'''
 Accuracy: 0.94
 Classification Report:
                precision    recall  f1-score   support
@@ -206,6 +214,7 @@ weighted avg       0.94      0.94      0.94      1000
 
 '''
 
+'''
 # Save the model to a file
 
 folder = 'sklearn_models'
@@ -217,6 +226,8 @@ os.makedirs(folder, exist_ok=True)
 with open(file_path, 'wb') as file:
     pickle.dump(clf, file)
     
+'''
+
 '''
 # Later, load the model from the file
 with open('model.pkl', 'rb') as file:
